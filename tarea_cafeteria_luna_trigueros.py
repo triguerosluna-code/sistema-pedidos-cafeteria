@@ -28,7 +28,7 @@ while True:
             print(f"{i}. {producto} - ${precio:.2f}")
             print()
             
-    elif opcion == 2:
+    elif opcion == "2":
         producto_buscado = input("Ingrese el nombre del producto que desea agregar: ")
         
         for producto, precio in menu.items():
@@ -54,5 +54,34 @@ while True:
         else:
             print("❌ El producto ingresado no existe en el menú.\n")
             continue
-
+    
+    elif opcion == "3":
+        if not pedido: 
+            print(" Su pedido actual esta vacio")
+            continue
+        
+        print(f"Pedido actual de {nombre_cliente.upper()}")
+        subtotal_parcial = 0.0
+        for item in pedido:
+            subtotal_parcial += item["subtotal"]
+            print(f"-{item["nombre"]} x {item["subtotal"]:.2f}")
+        print(f"Subtotal parcial: ${subtotal_parcial:.2f}")
+        
+    elif opcion == "4"
+        if not pedido:
+            print("no ha realizado ningun pedido. gracias por visitarno!")
+            break
+        
+        while True:
+            try:
+                porcentaje_propina = float(input("ingrese el porcentaje de propina que desea dejar: "))
+                if 0<= porcentaje_propina <= 100:
+                    break
+                else:
+                    print("El porcentaje debe estar entre 0 y 100.")
+            except ValueError:
+                print("Por favor ingrese un numero valido.")
+                
+                        
+            
 
